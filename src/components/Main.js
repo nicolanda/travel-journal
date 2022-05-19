@@ -16,7 +16,7 @@ export const Main = (props) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              View on Google Maps
+              View on Google Maps!
             </a>
           </div>
           <h1>{props.info.title}</h1>
