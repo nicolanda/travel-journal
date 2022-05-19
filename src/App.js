@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { Header } from "./components/Header";
+import { Main } from "./components/Main";
+import { data } from "./data";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+export const App = () => {
+  const countries = data.map((info,index)=>
+    {
+    return(
+      <Main
+        key={info.title}
+        info={info}
+        barrita={data[index + 1]}
+      />
+    )
+  });
+
+  return(
+    <div className="container">
+      <Header />
+      <section className="container--main">
+        {countries}
+      </section>
     </div>
-  );
-}
-
-export default App;
+)};
